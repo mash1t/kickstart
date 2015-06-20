@@ -28,7 +28,7 @@ TCPChat is a netbeans project, which is developed with **JDK 1.7.0_71**
 
 Used libraries:
 - [CryptoLib] 0.1.2
-- [NetworkLib] 0.1.1
+- [NetworkLib] 0.1.2
 
 ### Support
 This project is developed by Manuel Schmid.
