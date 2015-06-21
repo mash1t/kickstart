@@ -24,7 +24,7 @@ $ git clone [git-repo-url] kickstart
 ```
 
 ### Project Info
-TCPChat is a netbeans project, which is developed with **JDK 1.7.0_71**
+Kickstart is a netbeans project, which is developed with **JDK 1.7.0_71**
 
 Used libraries:
 - [CryptoLib] 0.1.2
