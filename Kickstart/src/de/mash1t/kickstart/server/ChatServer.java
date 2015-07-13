@@ -78,7 +78,6 @@ public final class ChatServer {
         int portNumber = conf.getConfigValueInt(ConfigParam.Port);
         // maxClientsCount = 0 means infinite clients
         int maxClientsCount = conf.getConfigValueInt(ConfigParam.MaxClients);
-        System.out.println(maxClientsCount);
         System.out.println("Server started on port " + portNumber);
 
         // Open a server socket on the portNumber (default 8000)
