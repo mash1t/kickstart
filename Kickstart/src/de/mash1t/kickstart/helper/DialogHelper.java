@@ -23,6 +23,8 @@
  */
 package de.mash1t.kickstart.helper;
 
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -34,6 +36,8 @@ import javax.swing.JOptionPane;
  */
 public class DialogHelper {
 
+    protected static Map<JFrame, DialogHelper> existingHelpers = new HashMap<>();
+
     private JFrame frame = null;
 
     /**
@@ -43,6 +47,11 @@ public class DialogHelper {
      */
     public DialogHelper(JFrame frame) {
         this.frame = frame;
+        // Check if a helper already exists for the given frame
+        if (!existingHelpers.containsKey(frame)) {
+            // Add helper to map
+            existingHelpers.put(frame, this);
+        }
     }
 
     /**
@@ -97,5 +106,20 @@ public class DialogHelper {
                 title,
                 JOptionPane.INFORMATION_MESSAGE,
                 icon);
+    }
+
+    /**
+     * Returns a DialogHelper for the given JFrame
+     *
+     * @param jFrame frame to show dialogs on
+     * @return new DialogHelper
+     */
+    public static DialogHelper getDialogHelper(JFrame jFrame) {
+        // Check if helper already exists
+        if (existingHelpers.containsKey(jFrame)) {
+            return existingHelpers.get(jFrame);
+        }
+        // Create new helper
+        return new DialogHelper(jFrame);
     }
 }
